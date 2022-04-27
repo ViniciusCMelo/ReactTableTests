@@ -14,9 +14,6 @@ function Dashboard(props) {
       <h1>Orders</h1>
       <div className="cardContainer">
         {sellers.map(seller => {
-          console.log(seller)
-          seller.totalAmount = 0;
-          seller.totalAmount = getTotalSoldBySeller(seller.id, orders);
           return (
             <SellerCard key={seller.id} title={seller.name} content={`$${seller.totalAmount}`}/>
           )

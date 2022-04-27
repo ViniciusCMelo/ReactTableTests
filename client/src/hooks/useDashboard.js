@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { getAllOrders } from "../repository/orders";
-import { getAllSellers } from "../repository/sellers";
+import { getAllSellers, getTotalSoldBySeller } from "../repository/sellers";
 
 
 export default function useDashboard(id) {
-console.log('useDashboard')
+  console.log('useDashboard')
   const [sellers, setSellers] = useState([]);
   const [orders, setOrders] = useState([]);
 
@@ -12,6 +12,9 @@ console.log('useDashboard')
     const updatedOrders = await getAllOrders();
     const updatedSellers = await getAllSellers();
 
+    updatedSellers.forEach(seller => {
+      seller.totalAmount = getTotalSoldBySeller(seller.id, updatedOrders);
+    })
     setOrders(updatedOrders);
     setSellers(updatedSellers);
   };
