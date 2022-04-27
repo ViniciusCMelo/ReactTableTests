@@ -1,4 +1,11 @@
-import {sellers} from '../../database/sellers.js'
+import {readFile} from 'fs/promises';
+
+const sellers = JSON.parse(
+  await readFile(
+    new URL('../../database/sellers.json', import.meta.url)
+  )
+);
+
 
 export const sellerRepository = {
 
@@ -7,13 +14,7 @@ export const sellerRepository = {
   },
   async find(id) {
     let searchResult = {};
-
-    try {
-      searchResult = sellers.filter(seller => (seller.id == id));
-    } catch (exception) {
-      console.error(exception);
-    }
-
-    return searchResult;
+    searchResult = sellers.filter(seller => (seller.id == id));
+    return searchResult[0];
   }
 }

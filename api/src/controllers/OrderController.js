@@ -3,8 +3,8 @@ import {orderRepository} from "../repositories/orderRepository.mjs";
 export default {
 
   async index(request, response) {
-    const sellers = await orderRepository.index();
-    return response.json(sellers);
+    const orders = await orderRepository.index();
+    return response.json(orders);
   },
 
   async show(request, response) {

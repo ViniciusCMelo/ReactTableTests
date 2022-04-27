@@ -1,16 +1,23 @@
-import {orders} from '../../database/orders.js'
+import {readFile} from 'fs/promises';
+import {sellerRepository} from "./sellerRepository.mjs";
+
+const ordersData = JSON.parse(
+  await readFile(
+    new URL('../../database/orders.json', import.meta.url)
+  )
+);
 
 export const orderRepository = {
 
   async index() {
-    return orders;
+    return ordersData;
   },
 
   async find(id) {
     let searchResult = {};
-
+    console.log(ordersData)
     try {
-      searchResult = orders.filter(order => (order.orderId == id));
+      searchResult = ordersData.filter(order => (order.orderId == id));
     } catch (exception) {
       console.error(exception);
     }
@@ -22,7 +29,7 @@ export const orderRepository = {
     let searchResult = {};
 
     try {
-      searchResult = orders.filter(order => (order.seller == sellerId));
+      searchResult = ordersData.filter(order => (order.seller == sellerId));
     } catch (exception) {
       console.error(exception);
     }

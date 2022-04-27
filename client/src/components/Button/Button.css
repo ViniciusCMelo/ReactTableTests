@@ -1,0 +1,23 @@
+.button {
+    font: normal 500 14px 'Roboto', sans-serif;
+    line-height: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    padding: 7px 16px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    max-height: 32px;
+    background: #321BDE;
+    color: #FFFFFF;
+    border: 1px solid #321BDE;
+    margin-right: 2em;
+}
+
+button:hover {
+    background: #5946E4;
+    color: #FFFFFF;
+    border: 1px solid #5946E4;
+}

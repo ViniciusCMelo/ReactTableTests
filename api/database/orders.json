@@ -1,4 +1,4 @@
-export let orders = [
+[
   {
     "orderId": 2019060001,
     "product": "Laptop #1",

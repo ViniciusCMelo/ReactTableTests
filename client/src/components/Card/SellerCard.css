@@ -1,0 +1,8 @@
+.card {
+    background: #faf9f9;
+    width: 140px;
+}
+.card:hover {
+    background: #9ea2ff;
+
+}

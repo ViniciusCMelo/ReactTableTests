@@ -1,4 +1,4 @@
-export let sellers = [
+[
   {
     "name": "Seller #1",
     "id": 1

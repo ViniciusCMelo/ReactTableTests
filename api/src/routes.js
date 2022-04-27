@@ -17,6 +17,8 @@ routes.get('/health', (request, response) => {
 routes.get('/sellers', SellerController.index);
 routes.get('/sellers/:id', SellerController.show);
 routes.get('/sellers/:id/orders', SellerController.showOrders);
+routes.get('/sellers/:id/totalValue', SellerController.getTotalValue);
+
 
 
 //Orders
