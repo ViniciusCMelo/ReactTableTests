@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
 }
+
 .cardContainer {
     display: flex;
     flex-direction: row;
@@ -14,4 +15,14 @@
 
 .cardContainer .card {
     margin: 0 10px;
+}
+
+.selectContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+select {
+    margin: 0 7px;
 }

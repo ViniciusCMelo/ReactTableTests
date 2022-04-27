@@ -1,7 +1,5 @@
 import { getTotalSoldBySeller } from "../../src/repository/sellers";
 
-jest.mock('');
-
 const mockOrders = [
   {
     "orderId": 2019060001,
@@ -38,7 +36,6 @@ describe("repository/sellers", () => {
     it(`should return '10.00' if the seller has 2 orders with price of 5`, function () {
       const totalSold = getTotalSoldBySeller(mockSeller.id, mockOrders);
 
-      console.log(totalSold);
       expect(totalSold).toBe('10.00');
     });
   })
