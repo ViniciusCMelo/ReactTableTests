@@ -8,7 +8,6 @@ export function getTotalSoldBySeller(sellerId, orders) {
     });
     return totalSold.toFixed(2);
   } catch (exception) {
-    console.error(exception);
     return [];
   }
 }
@@ -18,7 +17,6 @@ export async function getAllSellers() {
     const response = await api.get(`sellers`);
     return response.data;
   } catch (exception) {
-    console.error(exception);
     return [];
   }
 }

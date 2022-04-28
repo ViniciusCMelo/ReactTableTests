@@ -24,6 +24,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest --watch --coverage=false",
+    "testFinal": "jest --coverage=true",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -49,6 +50,7 @@
     "@babel/preset-react": "^7.16.7",
     "babel-jest": "^28.0.1",
     "jest": "^28.0.1",
-    "react-test-renderer": "^18.0.0"
+    "react-test-renderer": "^18.0.0",
+    "regenerator-runtime": "^0.13.9"
   }
 }

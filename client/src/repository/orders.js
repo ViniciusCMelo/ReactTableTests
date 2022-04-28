@@ -5,7 +5,6 @@ export async function getOrdersFromSeller(sellerId) {
     const response = await api.get(`/sellers/${sellerId}/orders`);
     return response.data;
   } catch (exception) {
-    console.error(exception);
     return [];
   }
 }
@@ -15,7 +14,6 @@ export async function getAllOrders() {
     const response = await api.get(`orders`);
     return response.data;
   } catch (exception) {
-    console.error(exception);
     return [];
   }
 }

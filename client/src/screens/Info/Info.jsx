@@ -8,7 +8,7 @@ function Info(props) {
     <div className="infoContainer">
       <Header/>
       <h1>This project was created by Vinícius Melo</h1>
-      <h2>In this project was used:</h2>
+      <h2>In this project were used:</h2>
       <div className="cardContainer">
         {["Node.js", "Express", "React", "Jest"].map(tech => (
           <InfoCard title={tech}/>
