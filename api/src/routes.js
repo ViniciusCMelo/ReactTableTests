@@ -1,4 +1,4 @@
-import {Router} from 'express';
+import { Router } from 'express';
 import SellerController from "./controllers/SellerController.js";
 import OrderController from "./controllers/OrderController.js";
 
@@ -18,8 +18,6 @@ routes.get('/sellers', SellerController.index);
 routes.get('/sellers/:id', SellerController.show);
 routes.get('/sellers/:id/orders', SellerController.showOrders);
 routes.get('/sellers/:id/totalValue', SellerController.getTotalValue);
-
-
 
 //Orders
 routes.get('/orders', OrderController.index);

@@ -1,11 +1,10 @@
-import {readFile} from 'fs/promises';
+import { readFile } from 'fs/promises';
 
 const sellers = JSON.parse(
   await readFile(
     new URL('../../database/sellers.json', import.meta.url)
   )
 );
-
 
 export const sellerRepository = {
 

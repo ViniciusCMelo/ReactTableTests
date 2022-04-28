@@ -1,4 +1,4 @@
-import {orderRepository} from "../repositories/orderRepository.mjs";
+import { orderRepository } from "../repositories/orderRepository.mjs";
 
 export default {
 
@@ -9,7 +9,7 @@ export default {
   },
 
   async show(request, response) {
-    const {id} = request.params;
+    const { id } = request.params;
     const seller = await orderRepository.find(id);
 
     return response.json(seller);
