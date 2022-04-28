@@ -6,7 +6,7 @@ import "./Table.css";
 
 export function Table({ data, countries, seller }) {
   const columns = useMemo(() => Columns, []);
-  const tableData = useMemo(() => data, []);
+  const tableData = useMemo(() => data, [data]);
 
   const tableInstance = useTable({
     columns,
@@ -17,7 +17,6 @@ export function Table({ data, countries, seller }) {
     getTableProps,
     getTableBodyProps,
     headerGroups,
-    rows,
     prepareRow,
     setFilter,
     page,
@@ -35,7 +34,7 @@ export function Table({ data, countries, seller }) {
 
   useEffect(() => {
     setFilter("country", countries);
-  }, [countries]);
+  }, [countries, setFilter]);
 
   useEffect(() => {
     if (seller === "All sellers") {
@@ -43,7 +42,7 @@ export function Table({ data, countries, seller }) {
     } else {
       setFilter("seller", seller);
     }
-  }, [seller]);
+  }, [seller, setFilter]);
 
   return (
     <>
