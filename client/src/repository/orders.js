@@ -13,7 +13,6 @@ export async function getOrdersFromSeller(sellerId) {
 export async function getAllOrders() {
   try {
     const response = await api.get(`orders`);
-    console.log(response)
     return response.data;
   } catch (exception) {
     console.error(exception);

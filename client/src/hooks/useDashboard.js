@@ -5,7 +5,6 @@ import { getCountriesFromOrders } from "../repository/countries";
 
 
 export default function useDashboard(id) {
-  console.log('useDashboard')
   const [sellers, setSellers] = useState([]);
   const [orders, setOrders] = useState([]);
   const [countries, setCountries] = useState([]);

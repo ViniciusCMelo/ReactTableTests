@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import './Button.css'
 
-function Button({title, action, icon}) {
+function Button({title, action, icon, disabled}) {
 
   return (
-    <button className="button" onClick={action}>
+    <button className="button" onClick={action} disabled={disabled ?? false}>
       {title}
       {icon ? icon : null }
     </button>
@@ -15,7 +15,8 @@ function Button({title, action, icon}) {
 Button.propTypes = {
   title: PropTypes.string,
   action: PropTypes.func,
-  icon: PropTypes.element
+  icon: PropTypes.element,
+  disabled: PropTypes.bool
 }
 
 export default Button;

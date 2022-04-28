@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from "../../components/Header/Header";
 import SellerCard from "../../components/Card/SellerCard";
 import './Dashboard.css';
 import useDashboard from "../../hooks/useDashboard";
+import Table from "../../components/Table/Table"
 
 function Dashboard(props) {
   const [sellers, orders, countries] = useDashboard()
+  const [searchedCountry, setSearchedCountry] = useState("");
+  const [searchedSeller, setSearchedSeller] = useState("All sellers");
+
 
   return (
     <div className="container">
       <Header/>
-      <h1>Orders</h1>
+      <h1>Orders Dashboard</h1>
       <div className="cardContainer">
         {sellers.map(seller => {
           return (
@@ -22,20 +26,20 @@ function Dashboard(props) {
       <div className="selectContainer">
 
         <select name="" id="" onChange={(e) => {
-          console.log(e.target.value)
+          setSearchedSeller(e.target.value)
         }}>
-          <option label={'All sellers'} value={'all sellers'}/>
+          <option label={'All sellers'} value={"All sellers"}/>
           {sellers.map(seller => {
             return (
-              <option key={seller.id} label={seller.name} value={seller.name}/>
+              <option key={seller.id} label={seller.name} value={seller.id}/>
             )
           })}
         </select>
 
         <select name="countries" id="countries" onChange={(e) => {
-          console.log(e.target.value)
+          setSearchedCountry(e.target.value)
         }}>
-          <option label={'All countries'} value={'all countries'}/>
+          <option label={'All countries'} value={''}/>
           {countries.map(country => {
             return (
               <option key={country} label={country} value={country}/>
@@ -44,9 +48,9 @@ function Dashboard(props) {
         </select>
 
       </div>
-      {/*<Table data={orders} />*/}
-
-      <label htmlFor="">This is the DashboardScreen</label>
+      <div className="tableContainer">
+        {orders.length > 0 ? <Table data={orders} countries={searchedCountry} seller={searchedSeller}/> : <></>}
+      </div>
     </div>
   );
 }

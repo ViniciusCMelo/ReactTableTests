@@ -21,3 +21,9 @@ button:hover {
     color: #FFFFFF;
     border: 1px solid #5946E4;
 }
+
+button:disabled {
+    background: #4639b9;
+    color: #e7e7e7;
+    border: 1px solid #5946E4;
+}
