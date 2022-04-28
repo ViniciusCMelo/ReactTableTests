@@ -4,7 +4,7 @@ import "./SellerCard.css"
 import PropTypes from "prop-types";
 import Button from "../Button/Button";
 
-function SellerCard({title, content}) {
+function InfoCard({title, content}) {
   return (
       <Card className="card">
         <CardContent>
@@ -19,4 +19,4 @@ Button.propTypes = {
   title: PropTypes.string,
   amount: PropTypes.number,
 }
-export default SellerCard;
+export default InfoCard;

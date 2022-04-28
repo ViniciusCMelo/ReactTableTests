@@ -1,12 +1,15 @@
 import React from 'react';
 import './Header.css';
 import Button from "../Button/Button";
+import { useNavigate } from 'react-router-dom';
+function Header() {
+  let navigate = useNavigate();
 
-function Header(props) {
   return (
+
     <div className="header">
-      <Button title={"Orders"} action={() => alert('Navigate to Orders')}/>
-      <Button title={"Info"} action={() => alert('Navigate to Info')}/>
+      <Button title={"Orders"} action={() => navigate("/")}/>
+      <Button title={"Info"} action={() => navigate("/info")}/>
     </div>
   );
 }

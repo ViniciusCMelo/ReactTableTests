@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from "../../components/Header/Header";
-import SellerCard from "../../components/Card/SellerCard";
+import InfoCard from "../../components/Card/InfoCard";
 import './Dashboard.css';
 import useDashboard from "../../hooks/useDashboard";
 import Table from "../../components/Table/Table"
@@ -18,7 +18,7 @@ function Dashboard(props) {
       <div className="cardContainer">
         {sellers.map(seller => {
           return (
-            <SellerCard key={seller.id} title={seller.name} content={`$${seller.totalAmount}`}/>
+            <InfoCard key={seller.id} title={seller.name} content={`$${seller.totalAmount}`}/>
           )
         })}
       </div>
