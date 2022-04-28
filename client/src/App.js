@@ -1,5 +1,4 @@
 import './App.css';
-import Dashboard from "./screens/Dashboard/Dashboard";
 import Router from "./routes";
 
 function App() {
